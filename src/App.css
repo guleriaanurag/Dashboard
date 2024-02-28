@@ -1,0 +1,131 @@
+#root{
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-scrollbar{
+    scrollbar-width: none;
+}
+
+#dashboard{
+    width: 50vw;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#region{
+    color: #8a8585;
+}
+
+#back-btn{
+    display: inline;
+    font-size: xx-large;
+    color: grey;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#head{
+    display: flex;
+    padding: 10px;
+}
+
+#card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 10%;
+    border-bottom: 1px solid rgb(128, 128, 128, 0.2);
+}
+
+.card-name{
+    font-size: medium;
+    font-weight: 500;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.forward-btn{
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.card-info{
+    display: flex;
+}
+
+.icon{
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+    width: 30px;
+    margin-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.energy-icon{
+    background-color: rgb(223, 158, 4);
+    color: #ffffff;
+}
+
+.diesel-icon{
+    background-color: rgb(183, 4, 183);
+    color: #ffffff;
+}
+
+.wind-icon{
+    color: #ffffff;
+    background-color: #616161;
+}
+
+.water-icon{
+    background-color: #0a86de;
+    color: #ffffff;
+}
+
+.data-wrapper{
+    display: flex;
+    gap: 85px;
+    margin: 20px;
+}
+
+.data-key{
+    font-size: small;
+    color: #808080;
+}
+
+.data-value{
+    margin-top: auto;
+}
+
+.data-value span{
+    font: bold;
+    font-weight: 600;
+}
+
+.data-value sup{
+    font-size: x-small;
+    color: grey;
+}
+
+.focus-btn{
+    position: absolute;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    cursor: pointer;
+}
