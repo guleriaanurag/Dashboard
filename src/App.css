@@ -23,6 +23,7 @@
     color: grey;
     margin-right: 10px;
     cursor: pointer;
+    height: min-content;
 }
 
 #head{
