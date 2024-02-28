@@ -127,7 +127,7 @@ export default function DeckMap() {
             <DeckGL
                 key={Math.floor(Math.random() * 10000)}
                 initialViewState={viewState}
-                controller={{ doubleClickZoom: false, touchRotate: false, scrollZoom: false }}
+                controller={{ doubleClickZoom: false, touchRotate: false, scrollZoom: true }}
                 layers={layers}
                 style={
                     {
@@ -138,7 +138,7 @@ export default function DeckMap() {
                 getTooltip={({ object }) => object && {
                     html: `${(object.properties.name).split(',')[0] || null}`,
                     style: {
-                        fontSize: '20px',
+                        fontSize: '18px',
                         padding: '5px',
                         borderRadius: '10px',
                         backgroundColor: 'white',
