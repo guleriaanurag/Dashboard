@@ -4,7 +4,6 @@ import { LocationContext } from "../store/LocationContext";
 import { DeckGL } from "deck.gl";
 import INDIA_STATES_DATA from '../assets/states_india.json';
 import LOCATION_POINTS_DATA from '../assets/factory_points.json';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { TbFocus2 } from 'react-icons/tb'
 
 const INITIAL_VIEW_STATE = {
