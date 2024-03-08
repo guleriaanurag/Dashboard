@@ -40,9 +40,9 @@ export default function DeckMap() {
     const getIconPosition = d => {
         const coordinates = d.geometry.coordinates;
         const state = (d.properties.name).split(',')[1].trim();
-        let elevation = 40000;
+        let elevation = 35000;
         if (state === selectedState) {
-            elevation = 80000;
+            elevation = 75000;
         }
         return [coordinates[0], coordinates[1], elevation + 1];
     };
