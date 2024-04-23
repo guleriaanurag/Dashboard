@@ -11,6 +11,7 @@
     width: 50vw;
     height: 100vh;
     overflow: scroll;
+    transition: width ease-in-out 1.5s;
 }
 
 #region{

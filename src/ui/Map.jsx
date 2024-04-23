@@ -5,6 +5,7 @@ import { DeckGL } from "deck.gl";
 import INDIA_STATES_DATA from '../assets/states_india.json';
 import LOCATION_POINTS_DATA from '../assets/factory_points.json';
 import { TbFocus2 } from 'react-icons/tb'
+import { StatsMenuContext } from "../store/StatsMenuContextProvider";
 
 const INITIAL_VIEW_STATE = {
     altitude: 1.5,
@@ -40,7 +41,7 @@ export default function DeckMap() {
     const getIconPosition = d => {
         const coordinates = d.geometry.coordinates;
         const state = (d.properties.name).split(',')[1].trim();
-        let elevation = 35000;
+        let elevation = 30500;
         if (state === selectedState) {
             elevation = 75000;
         }
@@ -120,8 +121,10 @@ export default function DeckMap() {
         })
     ];
 
+    const { menuIsOpen } = useContext(StatsMenuContext);
+
     return (
-        <div style={{ position: 'relative', height: '100vh', width: '50vw', backgroundColor: 'rgb(196,192,190)' }}>
+        <div style={{ position: 'relative', height: '100vh', width: menuIsOpen ? '50vw' : '100vw', backgroundColor: 'rgb(196,192,190)' }}>
             {(viewState !== INITIAL_VIEW_STATE) && <button className="focus-btn" title={'Reset view'} onClick={handleFocusReset}><TbFocus2 /></button>}
             <DeckGL
                 key={Math.floor(Math.random() * 10000)}

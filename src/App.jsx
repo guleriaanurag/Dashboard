@@ -2,13 +2,16 @@ import DashBoard from "./ui/DashBoard";
 import DeckMap from "./ui/Map";
 import './App.css'
 import LocationContextProvider from "./store/LocationContext";
+import StatsMenuContextProvider from "./store/StatsMenuContextProvider";
 
 
 export default function App(){
   return(
     <LocationContextProvider>
-      <DeckMap />
-      <DashBoard />
+      <StatsMenuContextProvider>
+        <DeckMap />
+        <DashBoard />
+      </StatsMenuContextProvider>
     </LocationContextProvider>
   );
 }
