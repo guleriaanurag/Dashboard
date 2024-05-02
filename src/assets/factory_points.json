@@ -91,6 +91,19 @@
             "properties":{
                 "name": "Chennai, Tamil Nadu"
             }
+        },
+        {
+            "type":"Feature",
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    91.7086,
+                    26.1158
+                ]
+            },
+            "properties":{
+                "name": "Guwahati, Assam"
+            }
         }
     ]
 }
