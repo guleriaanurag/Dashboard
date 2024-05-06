@@ -6,7 +6,7 @@ export const StatsMenuContext = createContext({
 })
 
 export default function StatsMenuContextProvider({children}){
-    const[menuIsOpen,setMenuIsOpen] = useState(true);
+    const[menuIsOpen,setMenuIsOpen] = useState(false);
     function toggleMenu(){
         setMenuIsOpen( prevState => !prevState);
     }

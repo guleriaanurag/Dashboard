@@ -27,7 +27,8 @@ const INITIAL_VIEW_STATE = {
 export default function DeckMap() {
 
     const { changeLocation } = useContext(LocationContext);
-    const [selectedState, setSelectedState] = useState('Maharashtra');
+    const { toggleMenu,menuIsOpen } = useContext(StatsMenuContext);
+    const [selectedState, setSelectedState] = useState('');
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
 
     const getBG = (feature) => {
@@ -64,15 +65,25 @@ export default function DeckMap() {
             return prevState;
         });
         const coordinates = info.object.geometry.coordinates;
+        // setViewState(prevState => {
+        //     return { 
+        //         ...prevState, 
+        //         latitude: coordinates[1], 
+        //         longitude: coordinates[0], 
+        //         zoom: 5.5, 
+        //         bearing: 45,
+        //     }
+        // })
         setViewState(prevState => {
             return { 
-                ...prevState, 
-                latitude: coordinates[1], 
-                longitude: coordinates[0], 
-                zoom: 5.5, 
-                bearing: 45,
+                ...prevState,
+                bearing: 25,
+                zoom: 4.6
             }
         })
+        if(!menuIsOpen){
+            toggleMenu();
+        }
     }
 
     function handleFocusReset() {
@@ -120,8 +131,6 @@ export default function DeckMap() {
             onClick: handleMarkerClicked,
         })
     ];
-
-    const { menuIsOpen } = useContext(StatsMenuContext);
 
     return (
         <div style={{ position: 'relative', height: '100vh', width: menuIsOpen ? '50vw' : '100vw', backgroundColor: 'rgb(196,192,190)' }}>
