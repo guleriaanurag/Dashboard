@@ -11,7 +11,7 @@ const INITIAL_VIEW_STATE = {
     altitude: 1.5,
     bearing: 38.593439709841554,
     height: 781,
-    latitude: 21.09386207284039,
+    latitude: 20.09386207284039,
     longitude: 78.08995910232979,
     maxPitch: 60,
     maxZoom: 20,
@@ -21,7 +21,7 @@ const INITIAL_VIEW_STATE = {
     pitch: 60,
     position: [0, 0, 0],
     width: 1341,
-    zoom: 4.775953349169205,
+    zoom: 4.875953349169205,
 }
 
 export default function DeckMap() {
@@ -42,9 +42,9 @@ export default function DeckMap() {
     const getIconPosition = d => {
         const coordinates = d.geometry.coordinates;
         const state = (d.properties.name).split(',')[1].trim();
-        let elevation = 30500;
+        let elevation = menuIsOpen ? 68500 : 40000;
         if (state === selectedState) {
-            elevation = 75000;
+            elevation = 107000;
         }
         return [coordinates[0], coordinates[1], elevation + 1];
     };
